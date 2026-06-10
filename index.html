@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORYEN Solutions — Digital product builders for commercial growth systems</title>
+<meta name="description" content="ORYEN Solutions builds digital products, platforms, portals, dashboards, workflows and growth systems that turn commercial strategy into measurable digital execution.">
+<link rel="canonical" href="https://oryen.solutions">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oryen.solutions">
+<meta property="og:title" content="ORYEN Solutions">
+<meta property="og:description" content="Digital products that make commercial growth operational.">
+<meta property="og:site_name" content="ORYEN Solutions">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ORYEN Solutions">
+<meta name="twitter:description" content="Digital products that make commercial growth operational.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Instrument+Sans:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0B0F13;
+  --bg-raise:#10151B;
+  --panel:#121922;
+  --line:#1E2731;
+  --line-soft:#171F28;
+  --text:#E9EDEF;
+  --muted:#8B98A1;
+  --faint:#5C6973;
+  --accent:#5FB3B8;
+  --accent-deep:#2C5D63;
+  --accent-dim:rgba(95,179,184,0.14);
+  --max:1180px;
+  --pad:clamp(1.25rem,5vw,4rem);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important}
+  .reveal{opacity:1 !important;transform:none !important}
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Instrument Sans',system-ui,sans-serif;
+  font-size:1.0425rem;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+::selection{background:var(--accent);color:#06090B}
+
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+/* ---------- type ---------- */
+.serif{font-family:'Newsreader',serif;font-optical-sizing:auto;font-weight:300;letter-spacing:-0.01em}
+.mono{font-family:'Spline Sans Mono',monospace}
+.eyebrow{
+  font-family:'Spline Sans Mono',monospace;
+  font-size:0.7rem;font-weight:500;
+  letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--accent);
+}
+h2{
+  font-weight:600;
+  font-size:clamp(1.8rem,3.4vw,2.6rem);
+  letter-spacing:-0.025em;
+  line-height:1.12;
+  margin-top:1rem;
+}
+.section-sub{color:var(--muted);max-width:56ch;margin-top:1.1rem}
+
+/* ---------- reveal on scroll ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,15,19,0.78);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-soft);
+}
+.header-inner{display:flex;justify-content:space-between;align-items:center;padding-top:1.05rem;padding-bottom:1.05rem}
+.wordmark{
+  font-family:'Spline Sans Mono',monospace;font-weight:500;
+  font-size:0.85rem;letter-spacing:0.28em;text-decoration:none;
+  display:flex;align-items:center;gap:0.7rem;
+}
+.wordmark .pip{width:7px;height:7px;background:var(--accent);border-radius:50%;box-shadow:0 0 12px var(--accent)}
+.wordmark .sub{color:var(--faint);letter-spacing:0.28em}
+.header-link{font-size:0.88rem;font-weight:500;text-decoration:none;color:var(--muted);transition:color .2s}
+.header-link:hover{color:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;
+  padding-top:clamp(3.5rem,7vw,6rem);
+  padding-bottom:clamp(3rem,6vw,5rem);
+  background:
+    radial-gradient(1100px 600px at 50% -10%, rgba(95,179,184,0.09), transparent 60%),
+    linear-gradient(var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+  background-size:auto, 56px 56px, 56px 56px;
+  background-position:center top;
+  border-bottom:1px solid var(--line-soft);
+}
+.hero::after{
+  content:"";position:absolute;inset:auto 0 0 0;height:160px;
+  background:linear-gradient(transparent, var(--bg));
+  pointer-events:none;
+}
+.hero-head{text-align:center;max-width:880px;margin:0 auto;position:relative;z-index:2}
+.hero h1{
+  font-weight:600;
+  font-size:clamp(2.4rem,5.6vw,4.3rem);
+  letter-spacing:-0.032em;
+  line-height:1.05;
+  margin-top:1.4rem;
+}
+.hero h1 em{
+  font-family:'Newsreader',serif;font-style:italic;font-weight:300;
+  letter-spacing:-0.01em;
+  color:var(--accent);
+}
+.hero-sub{
+  margin:1.6rem auto 0;max-width:62ch;
+  color:var(--muted);
+  font-size:clamp(1rem,1.5vw,1.15rem);
+}
+.hero-actions{margin-top:2.4rem;display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap;align-items:center}
+.btn{
+  display:inline-block;text-decoration:none;font-weight:600;font-size:0.95rem;
+  padding:0.9rem 1.9rem;border-radius:8px;
+  background:var(--text);color:#0B0F13;
+  border:1px solid var(--text);
+  transition:background .2s,border-color .2s,box-shadow .2s,transform .2s;
+}
+.btn:hover{background:var(--accent);border-color:var(--accent);box-shadow:0 0 28px rgba(95,179,184,0.35);transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-block;text-decoration:none;font-weight:500;font-size:0.95rem;
+  padding:0.9rem 1.6rem;border-radius:8px;
+  color:var(--text);background:transparent;
+  border:1px solid var(--line);
+  transition:border-color .2s,color .2s,background .2s;
+}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+.hero-trust{margin-top:2.6rem;font-size:0.74rem;letter-spacing:0.1em;color:var(--faint)}
+
+/* ---------- system diagram ---------- */
+.system{
+  position:relative;z-index:1;
+  margin:clamp(2rem,5vw,3.5rem) auto 0;
+  max-width:1020px;
+}
+.system svg{display:block;width:100%;height:auto}
+.sys-line{stroke:var(--line);stroke-width:1;fill:none}
+.sys-node rect{
+  fill:var(--panel);stroke:var(--line);stroke-width:1;
+}
+.sys-node text{
+  font-family:'Spline Sans Mono',monospace;
+  font-size:11.5px;letter-spacing:0.08em;
+  fill:var(--muted);
+}
+.sys-node .dot{fill:var(--accent)}
+.sys-core rect{
+  fill:#0E1318;stroke:var(--accent-deep);stroke-width:1.25;
+}
+.sys-core .corner{stroke:var(--accent);stroke-width:1.5;fill:none}
+.sys-core text.brand{
+  font-family:'Spline Sans Mono',monospace;font-weight:500;
+  font-size:14px;letter-spacing:0.3em;fill:var(--text);
+}
+.sys-core text.tag{
+  font-family:'Spline Sans Mono',monospace;
+  font-size:9px;letter-spacing:0.2em;fill:var(--accent);
+}
+.pulse{fill:var(--accent)}
+.core-glow{fill:url(#coreGlow)}
+
+@media (prefers-reduced-motion: no-preference){
+  .sys-line{stroke-dasharray:600;stroke-dashoffset:600;animation:lineDraw 1.6s cubic-bezier(.4,0,.2,1) forwards}
+  .sys-node{opacity:0;animation:nodeIn .8s cubic-bezier(.2,.7,.3,1) forwards}
+  .sys-core{opacity:0;animation:nodeIn 1s cubic-bezier(.2,.7,.3,1) .15s forwards}
+  .sys-node .dot{animation:blink 3.6s ease-in-out infinite}
+  .hero-head > *{opacity:0;animation:riseIn .9s cubic-bezier(.2,.7,.3,1) forwards}
+  .hero-head > *:nth-child(2){animation-delay:.12s}
+  .hero-head > *:nth-child(3){animation-delay:.24s}
+  .hero-head > *:nth-child(4){animation-delay:.36s}
+  .hero-head > *:nth-child(5){animation-delay:.48s}
+}
+@keyframes lineDraw{to{stroke-dashoffset:0}}
+@keyframes nodeIn{from{opacity:0;transform:translateY(10px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes riseIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* ---------- impact statement ---------- */
+.impact{
+  padding-top:clamp(5rem,10vw,8.5rem);
+  padding-bottom:clamp(5rem,10vw,8.5rem);
+  text-align:center;
+  position:relative;
+}
+.impact .serif-big{
+  font-family:'Newsreader',serif;font-weight:300;font-style:italic;
+  font-size:clamp(2.3rem,5.4vw,4.2rem);
+  letter-spacing:-0.015em;line-height:1.1;
+  max-width:18ch;margin:0 auto;
+}
+.impact p{color:var(--muted);max-width:54ch;margin:1.8rem auto 0;font-size:clamp(1rem,1.5vw,1.15rem)}
+.impact .punch{
+  margin-top:2.2rem;color:var(--text);font-weight:600;font-size:clamp(1.1rem,1.8vw,1.35rem);
+  letter-spacing:-0.01em;
+}
+.impact .punch span{color:var(--accent)}
+
+/* ---------- sections ---------- */
+section{padding-top:clamp(4.5rem,8vw,7rem);padding-bottom:clamp(4.5rem,8vw,7rem)}
+.rule{border:0;border-top:1px solid var(--line-soft)}
+
+/* ---------- build grid ---------- */
+.build-grid{
+  margin-top:clamp(2.4rem,5vw,3.6rem);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line-soft);
+  border:1px solid var(--line-soft);
+  border-radius:14px;overflow:hidden;
+}
+@media (max-width:1020px){.build-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:580px){.build-grid{grid-template-columns:1fr}}
+.build-card{
+  background:var(--bg-raise);
+  padding:1.8rem 1.6rem 2rem;
+  position:relative;
+  transition:background .25s;
+}
+.build-card::before{
+  content:"";position:absolute;top:0;left:1.6rem;right:1.6rem;height:1px;
+  background:var(--accent);transform:scaleX(0);transform-origin:left;
+  transition:transform .35s cubic-bezier(.2,.7,.3,1);
+}
+.build-card:hover{background:var(--panel)}
+.build-card:hover::before{transform:scaleX(1)}
+.build-card .idx{
+  font-family:'Spline Sans Mono',monospace;font-size:0.68rem;
+  letter-spacing:0.16em;color:var(--faint);
+}
+.build-card h3{font-size:1.08rem;font-weight:600;letter-spacing:-0.01em;margin:0.9rem 0 0.6rem}
+.build-card p{font-size:0.92rem;color:var(--muted);line-height:1.6}
+
+/* ---------- comparison ---------- */
+.compare{margin-top:clamp(2.4rem,5vw,3.4rem);border-top:1px solid var(--line-soft)}
+.compare-row{
+  display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(1rem,3vw,2.5rem);
+  align-items:baseline;
+  padding:1.6rem 0;border-bottom:1px solid var(--line-soft);
+}
+@media (max-width:640px){.compare-row{grid-template-columns:1fr;gap:0.4rem}}
+.compare-row .them{color:var(--faint);font-size:clamp(1rem,1.6vw,1.2rem)}
+.compare-row .arrow{font-family:'Spline Sans Mono',monospace;color:var(--accent);font-size:0.9rem}
+.compare-row .us{
+  font-family:'Newsreader',serif;font-weight:400;
+  font-size:clamp(1.25rem,2.2vw,1.7rem);letter-spacing:-0.01em;
+}
+
+/* ---------- process ---------- */
+.process{margin-top:clamp(2.4rem,5vw,3.4rem);position:relative}
+.step{
+  display:grid;grid-template-columns:90px 1fr;gap:clamp(1.2rem,3vw,2.5rem);
+  padding:2rem 0;border-top:1px solid var(--line-soft);
+  position:relative;
+}
+@media (max-width:560px){.step{grid-template-columns:1fr;gap:0.6rem}}
+.step .num{
+  font-family:'Spline Sans Mono',monospace;font-size:0.95rem;
+  color:var(--accent);letter-spacing:0.1em;padding-top:0.25rem;
+}
+.step h3{font-size:1.18rem;font-weight:600;letter-spacing:-0.01em}
+.step p{color:var(--muted);margin-top:0.55rem;max-width:64ch;font-size:0.97rem}
+
+/* ---------- capabilities ---------- */
+.caps{
+  margin-top:clamp(2.4rem,5vw,3.4rem);
+  display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
+  background:var(--line-soft);border:1px solid var(--line-soft);
+  border-radius:14px;overflow:hidden;
+}
+@media (max-width:980px){.caps{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:580px){.caps{grid-template-columns:repeat(2,1fr)}}
+.cap{
+  background:var(--bg-raise);
+  padding:1.3rem 1.2rem;
+  font-family:'Spline Sans Mono',monospace;
+  font-size:0.76rem;letter-spacing:0.05em;color:var(--muted);
+  display:flex;flex-direction:column;gap:0.85rem;justify-content:space-between;
+  min-height:96px;
+  transition:background .25s,color .25s;
+}
+.cap:hover{background:var(--panel);color:var(--text)}
+.cap .cap-idx{font-size:0.62rem;color:var(--faint);letter-spacing:0.14em}
+.cap:hover .cap-idx{color:var(--accent)}
+.caps-note{margin-top:1.6rem;color:var(--faint);font-size:0.9rem;max-width:64ch}
+
+/* ---------- relationship ---------- */
+.relation{
+  border:1px solid var(--line);border-radius:18px;
+  background:
+    radial-gradient(700px 360px at 15% 0%, rgba(95,179,184,0.07), transparent 65%),
+    var(--bg-raise);
+  padding:clamp(2.2rem,5vw,4rem);
+}
+.relation h2{margin-top:0.9rem}
+.relation .pair{margin-top:1.6rem;max-width:58ch}
+.relation .pair p{color:var(--muted)}
+.relation .pair strong{color:var(--text);font-weight:600}
+.relation-actions{margin-top:2.2rem;display:flex;gap:1.3rem;flex-wrap:wrap;align-items:center}
+.relation .euline{font-size:0.85rem;color:var(--faint)}
+.relation .euline a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+.relation .euline a:hover{color:var(--accent);border-color:var(--accent)}
+
+/* ---------- CTA ---------- */
+.cta{text-align:center}
+.cta h2{font-size:clamp(2rem,4.4vw,3.3rem);max-width:22ch;margin-left:auto;margin-right:auto}
+.cta p{color:var(--muted);max-width:52ch;margin:1.5rem auto 0}
+.cta .btn{margin-top:2.4rem}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line-soft);background:#090C10}
+.footer-inner{
+  padding-top:3rem;padding-bottom:3rem;
+  display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:space-between;
+  font-size:0.85rem;color:var(--muted);
+}
+.footer-brand p{margin-top:0.9rem;max-width:40ch;line-height:1.65}
+.footer-links{display:flex;flex-direction:column;gap:0.55rem}
+.footer-links a{color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--accent)}
+.footer-legal{
+  width:100%;margin-top:0.5rem;padding-top:1.6rem;
+  border-top:1px solid var(--line-soft);
+  font-family:'Spline Sans Mono',monospace;font-size:0.72rem;
+  letter-spacing:0.04em;color:var(--faint);line-height:1.9;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <a class="wordmark" href="#top" aria-label="ORYEN Solutions home">
+      <span class="pip" aria-hidden="true"></span>ORYEN<span class="sub">SOLUTIONS</span>
+    </a>
+    <a class="header-link" href="https://oryen.be">oryen.be&nbsp;→</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-head">
+        <p class="eyebrow">ORYEN Solutions — Digital product builders</p>
+        <h1>We build digital products that make growth <em>operational.</em></h1>
+        <p class="hero-sub">ORYEN Solutions designs and builds the platforms, portals, workflows, dashboards and digital interfaces that turn strategy into measurable commercial execution.</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://oryen.be">Visit ORYEN.be</a>
+          <a class="btn-ghost" href="#build">Explore what we build</a>
+        </div>
+        <p class="hero-trust mono">PART OF THE ORYEN® BRAND ARCHITECTURE BY CNIP BV</p>
+      </div>
+
+      <!-- The system: a commercial operating system being assembled -->
+      <div class="system" aria-label="Diagram of the ORYEN Solutions commercial operating system: a central core connected to strategy, platform, CRM, data, automation, search, lead engine, dashboard, customer portal and sales flow modules.">
+        <svg viewBox="0 0 1000 560" role="img" aria-hidden="false">
+          <defs>
+            <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#5FB3B8" stop-opacity="0.16"/>
+              <stop offset="100%" stop-color="#5FB3B8" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <circle class="core-glow" cx="500" cy="280" r="230"/>
+
+          <!-- connection lines (drawn first, under nodes) -->
+          <g>
+            <path id="l1"  class="sys-line" d="M500 280 L185 100"/>
+            <path id="l2"  class="sys-line" d="M500 280 L500 78"/>
+            <path id="l3"  class="sys-line" d="M500 280 L815 100"/>
+            <path id="l4"  class="sys-line" d="M500 280 L112 225"/>
+            <path id="l5"  class="sys-line" d="M500 280 L888 225"/>
+            <path id="l6"  class="sys-line" d="M500 280 L112 350"/>
+            <path id="l7"  class="sys-line" d="M500 280 L888 350"/>
+            <path id="l8"  class="sys-line" d="M500 280 L215 478"/>
+            <path id="l9"  class="sys-line" d="M500 280 L500 500"/>
+            <path id="l10" class="sys-line" d="M500 280 L785 478"/>
+          </g>
+
+          <!-- pulses travelling outward -->
+          <g>
+            <circle class="pulse" r="2.6"><animateMotion dur="3.4s" begin="1.8s" repeatCount="indefinite"><mpath href="#l1"/></animateMotion></circle>
+            <circle class="pulse" r="2.6"><animateMotion dur="3.0s" begin="2.5s" repeatCount="indefinite"><mpath href="#l2"/></animateMotion></circle>
+            <circle class="pulse" r="2.6"><animateMotion dur="3.6s" begin="2.1s" repeatCount="indefinite"><mpath href="#l3"/></animateMotion></circle>
+            <circle class="pulse" r="2.6"><animateMotion dur="3.2s" begin="3.0s" repeatCount="indefinite"><mpath href="#l4"/></animateMotion></circle>
+            <circle class="pulse" r="2.6"><animateMotion dur="3.5s" begin="1.6s" repeatCount="indefinite"><mpath href="#l5"/></animateMotion></circle>
+            <circle class="pulse" r="2.6"><animateMotion dur="3.1s" begin="2.8s" repeatCount="indefinite"><mpath href="#l6"/></animateMotion></circle>
+            <circle class="pulse" r="2.6"><animateMotion dur="3.7s" begin="2.2s" repeatCount="indefinite"><mpath href="#l7"/></animateMotion></circle>
+            <circle class="pulse" r="2.6"><animateMotion dur="3.3s" begin="3.4s" repeatCount="indefinite"><mpath href="#l8"/></animateMotion></circle>
+            <circle class="pulse" r="2.6"><animateMotion dur="2.9s" begin="1.9s" repeatCount="indefinite"><mpath href="#l9"/></animateMotion></circle>
+            <circle class="pulse" r="2.6"><animateMotion dur="3.4s" begin="2.7s" repeatCount="indefinite"><mpath href="#l10"/></animateMotion></circle>
+          </g>
+
+          <!-- module nodes -->
+          <g class="sys-node" style="animation-delay:.30s"><rect x="115" y="80" width="140" height="40" rx="8"/><circle class="dot" cx="135" cy="100" r="3"/><text x="148" y="104">STRATEGY</text></g>
+          <g class="sys-node" style="animation-delay:.42s"><rect x="430" y="58" width="140" height="40" rx="8"/><circle class="dot" cx="450" cy="78" r="3" style="animation-delay:.6s"/><text x="463" y="82">PLATFORM</text></g>
+          <g class="sys-node" style="animation-delay:.54s"><rect x="745" y="80" width="140" height="40" rx="8"/><circle class="dot" cx="765" cy="100" r="3" style="animation-delay:1.2s"/><text x="778" y="104">CRM</text></g>
+          <g class="sys-node" style="animation-delay:.66s"><rect x="42" y="205" width="140" height="40" rx="8"/><circle class="dot" cx="62" cy="225" r="3" style="animation-delay:1.8s"/><text x="75" y="229">DATA</text></g>
+          <g class="sys-node" style="animation-delay:.78s"><rect x="818" y="205" width="150" height="40" rx="8"/><circle class="dot" cx="838" cy="225" r="3" style="animation-delay:2.4s"/><text x="851" y="229">AUTOMATION</text></g>
+          <g class="sys-node" style="animation-delay:.90s"><rect x="42" y="330" width="170" height="40" rx="8"/><circle class="dot" cx="62" cy="350" r="3" style="animation-delay:3.0s"/><text x="75" y="354">CUSTOMER PORTAL</text></g>
+          <g class="sys-node" style="animation-delay:1.02s"><rect x="818" y="330" width="150" height="40" rx="8"/><circle class="dot" cx="838" cy="350" r="3" style="animation-delay:1.5s"/><text x="851" y="354">SALES FLOW</text></g>
+          <g class="sys-node" style="animation-delay:1.14s"><rect x="145" y="458" width="140" height="40" rx="8"/><circle class="dot" cx="165" cy="478" r="3" style="animation-delay:2.1s"/><text x="178" y="482">SEARCH</text></g>
+          <g class="sys-node" style="animation-delay:1.26s"><rect x="425" y="480" width="150" height="40" rx="8"/><circle class="dot" cx="445" cy="500" r="3" style="animation-delay:2.7s"/><text x="458" y="504">LEAD ENGINE</text></g>
+          <g class="sys-node" style="animation-delay:1.38s"><rect x="715" y="458" width="140" height="40" rx="8"/><circle class="dot" cx="735" cy="478" r="3" style="animation-delay:3.3s"/><text x="748" y="482">DASHBOARD</text></g>
+
+          <!-- core -->
+          <g class="sys-core">
+            <rect x="385" y="244" width="230" height="72" rx="10"/>
+            <path class="corner" d="M385 258 V254 Q385 244 395 244 H399"/>
+            <path class="corner" d="M615 302 V306 Q615 316 605 316 H601"/>
+            <text class="brand" x="500" y="278" text-anchor="middle">ORYEN</text>
+            <text class="tag" x="500" y="298" text-anchor="middle">SOLUTIONS · SYSTEM ONLINE</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT ============ -->
+  <section class="impact">
+    <div class="wrap">
+      <p class="serif-big reveal">A website is rarely enough.</p>
+      <p class="reveal">Growth does not come from another isolated website, campaign or tool. It comes from a digital system where positioning, data, content, CRM, automation and sales follow-up work together.</p>
+      <p class="punch reveal">That is what <span>ORYEN Solutions</span> builds.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ============ WHAT WE BUILD ============ -->
+  <section id="build">
+    <div class="wrap">
+      <p class="eyebrow reveal">What we build</p>
+      <h2 class="reveal">The digital layer behind commercial growth.</h2>
+      <p class="section-sub reveal">Not assets. Systems — designed, built and connected to the way your company actually sells.</p>
+
+      <div class="build-grid reveal">
+        <article class="build-card">
+          <span class="idx">B·01</span>
+          <h3>Digital product platforms</h3>
+          <p>Custom digital platforms that support commercial processes, customer journeys or internal operations.</p>
+        </article>
+        <article class="build-card">
+          <span class="idx">B·02</span>
+          <h3>Lead generation engines</h3>
+          <p>Landing pages, forms, data flows, follow-up logic and reporting designed as one connected system.</p>
+        </article>
+        <article class="build-card">
+          <span class="idx">B·03</span>
+          <h3>Customer portals</h3>
+          <p>Secure, useful interfaces that give customers, partners or sales teams access to the right information.</p>
+        </article>
+        <article class="build-card">
+          <span class="idx">B·04</span>
+          <h3>Commercial dashboards</h3>
+          <p>Decision dashboards that show where leads, revenue, conversion and friction appear.</p>
+        </article>
+        <article class="build-card">
+          <span class="idx">B·05</span>
+          <h3>CRM-connected workflows</h3>
+          <p>Digital flows that connect website behaviour, forms, contacts, segmentation, automation and sales actions.</p>
+        </article>
+        <article class="build-card">
+          <span class="idx">B·06</span>
+          <h3>High-performance websites</h3>
+          <p>Websites that are not built as brochures, but as commercial interfaces inside a larger growth system.</p>
+        </article>
+        <article class="build-card">
+          <span class="idx">B·07</span>
+          <h3>Automation layers</h3>
+          <p>Smart workflows that reduce manual work and create consistent commercial follow-up.</p>
+        </article>
+        <article class="build-card">
+          <span class="idx">B·08</span>
+          <h3>Internal digital tools</h3>
+          <p>Lightweight tools that help teams work faster, decide better and reduce operational friction.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ============ NOT AN AGENCY ============ -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow reveal">Positioning</p>
+      <h2 class="reveal">Not an agency. A digital product builder.</h2>
+      <p class="section-sub reveal">ORYEN Solutions is built for companies that need more than marketing execution. We design and build digital products that connect strategy, technology and commercial reality.</p>
+
+      <div class="compare reveal">
+        <div class="compare-row">
+          <p class="them">Agencies deliver assets.</p>
+          <span class="arrow" aria-hidden="true">→</span>
+          <p class="us">We build systems.</p>
+        </div>
+        <div class="compare-row">
+          <p class="them">Developers build features.</p>
+          <span class="arrow" aria-hidden="true">→</span>
+          <p class="us">We build commercial logic.</p>
+        </div>
+        <div class="compare-row">
+          <p class="them">Consultants deliver slides.</p>
+          <span class="arrow" aria-hidden="true">→</span>
+          <p class="us">We turn clarity into working digital products.</p>
+        </div>
+        <div class="compare-row">
+          <p class="them">Tools create options.</p>
+          <span class="arrow" aria-hidden="true">→</span>
+          <p class="us">We create structure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ============ PROCESS ============ -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow reveal">Process</p>
+      <h2 class="reveal">From strategic clarity to working product.</h2>
+
+      <div class="process">
+        <div class="step reveal">
+          <span class="num">01</span>
+          <div>
+            <h3>Understand the commercial problem</h3>
+            <p>We start with the growth friction: unclear positioning, weak conversion, broken follow-up, scattered tools, invisible data or operational bottlenecks.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="num">02</span>
+          <div>
+            <h3>Map the product logic</h3>
+            <p>We define what the digital product must do, who it serves, what data it needs and how it supports the business.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="num">03</span>
+          <div>
+            <h3>Design the interface</h3>
+            <p>We create clear, usable, premium digital interfaces that guide users and support decisions.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="num">04</span>
+          <div>
+            <h3>Build the system</h3>
+            <p>We develop the website, platform, portal, dashboard, workflow or automation layer with clean, scalable technology.</p>
+          </div>
+        </div>
+        <div class="step reveal" style="border-bottom:1px solid var(--line-soft)">
+          <span class="num">05</span>
+          <div>
+            <h3>Connect and improve</h3>
+            <p>We connect the product to CRM, data, reporting or follow-up flows and improve based on real usage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ============ CAPABILITIES ============ -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow reveal">Capabilities</p>
+      <h2 class="reveal">Capabilities</h2>
+
+      <div class="caps reveal">
+        <div class="cap"><span class="cap-idx">C·01</span>Product strategy</div>
+        <div class="cap"><span class="cap-idx">C·02</span>UX architecture</div>
+        <div class="cap"><span class="cap-idx">C·03</span>Web applications</div>
+        <div class="cap"><span class="cap-idx">C·04</span>High-performance websites</div>
+        <div class="cap"><span class="cap-idx">C·05</span>Landing page systems</div>
+        <div class="cap"><span class="cap-idx">C·06</span>CRM integration readiness</div>
+        <div class="cap"><span class="cap-idx">C·07</span>Marketing automation</div>
+        <div class="cap"><span class="cap-idx">C·08</span>Dashboard concepts</div>
+        <div class="cap"><span class="cap-idx">C·09</span>SEO architecture</div>
+        <div class="cap"><span class="cap-idx">C·10</span>Tracking &amp; analytics</div>
+        <div class="cap"><span class="cap-idx">C·11</span>API-connected workflows</div>
+        <div class="cap"><span class="cap-idx">C·12</span>Workflow tools</div>
+        <div class="cap"><span class="cap-idx">C·13</span>Content systems</div>
+        <div class="cap"><span class="cap-idx">C·14</span>Lead routing</div>
+        <div class="cap"><span class="cap-idx">C·15</span>Conversion systems</div>
+      </div>
+      <p class="caps-note reveal">We work with modern web technologies, automation platforms, CRM systems, analytics tools and AI-assisted workflows.</p>
+    </div>
+  </section>
+
+  <!-- ============ RELATIONSHIP TO ORYEN ============ -->
+  <section>
+    <div class="wrap">
+      <div class="relation reveal">
+        <p class="eyebrow">Brand architecture</p>
+        <h2>Built on ORYEN clarity.</h2>
+        <div class="pair">
+          <p><strong>ORYEN</strong> defines where commercial growth gets stuck.<br><strong>ORYEN Solutions</strong> builds the digital products that help remove that friction.</p>
+        </div>
+        <div class="relation-actions">
+          <a class="btn" href="https://oryen.be">Discover ORYEN</a>
+          <p class="euline">European brand presence: <a href="https://oryen.eu">oryen.eu</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta">
+    <div class="wrap">
+      <h2 class="reveal">Have a digital product idea that should finally become real?</h2>
+      <p class="reveal">If you need a platform, portal, dashboard, lead engine or commercial system — start with clarity, then build what matters.</p>
+      <a class="btn reveal" href="https://oryen.be">Start via ORYEN.be</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <span class="wordmark"><span class="pip" aria-hidden="true"></span>ORYEN<span class="sub">SOLUTIONS</span></span>
+      <p>Digital product builders for commercial growth systems.</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="https://oryen.be">ORYEN.be</a>
+      <a href="https://oryen.eu">ORYEN.eu</a>
+      <a href="/legal.html">Legal &amp; privacy</a>
+    </nav>
+    <div class="footer-legal">
+      ORYEN Solutions is the digital product and systems label within the ORYEN® brand architecture by CNIP bv.<br>
+      ORYEN® is a registered Benelux word mark owned by CNIP bv.<br>
+      © 2026 CNIP bv. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+</body>
+</html>
